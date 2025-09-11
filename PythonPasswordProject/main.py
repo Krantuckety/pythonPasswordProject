@@ -31,7 +31,7 @@ def main():
         else:
             useSymbols = False
 
-        # Prompt for if
+        # Prompt for if the generator should minimize how many times any character can be repeated
         userInput = (input("Do you want minimize repeat characters in your password? (Y/N): "))
         if userInput.lower() == "y":
             minimizeRepeats = True      # Characters can only be repeated 1-3 times based on length
