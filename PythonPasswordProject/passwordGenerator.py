@@ -1,3 +1,4 @@
+# Dependencies
 import random
 import string
 from collections import Counter
@@ -66,10 +67,8 @@ def outputPasswordStrength(strengthRating: int):
     # Note: Password length is the greatest feature in making a strong password
     match strengthRating:
         case 0 | 1: 
-            print("\nPassword Strength: VERY WEAK" + "\nTip: Try making your password longer than 16 characters")
-        case 2:
-            print("\nPassword Strength: WEAK")
-        case 3:
+            print("\nPassword Strength: WEAK" + "\nTip: Try making your password longer than 16 characters")
+        case 2 | 3:
             print("\nPassword Strength: MEDIUM")
         case 4:
             print("\nPassword Strength: STRONG")

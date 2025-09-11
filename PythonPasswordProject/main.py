@@ -6,7 +6,7 @@ from passwordGenerator import generatePassword
 
 def main():
     # Greeting
-    print("🔑 Welcome to Noah Ferenczhalmys Random Password Generator 🔑")
+    print("🔑 Welcome to Noah Ferenczhalmys Random Password Generator / Strength Tester🔑")
 
     while True:
         # Prompt for how long password should be
@@ -31,11 +31,12 @@ def main():
         else:
             useSymbols = False
 
-        userInput = (input("Do you want to allow some repeat characters in your password? (Y/N): "))
+        # Prompt for if
+        userInput = (input("Do you want minimize repeat characters in your password? (Y/N): "))
         if userInput.lower() == "y":
-            minimizeRepeats = True
+            minimizeRepeats = True      # Characters can only be repeated 1-3 times based on length
         else:
-            minimizeRepeats = False
+            minimizeRepeats = False     # Characters can be repeated infinite times
 
         # Generate password
         password = generatePassword(length, useNumbers, useSymbols, minimizeRepeats)
