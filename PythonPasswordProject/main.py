@@ -10,7 +10,12 @@ def main():
 
     while True:
         # Prompt for how long password should be
-        length = int(input("Enter password length: "))
+        while(True):
+            length = int(input("Enter password length: "))
+            if length < 99:
+                break
+            print("Password length to long, input a number smaller than 99")
+
 
         # Prompt for if numbers should be included
         userInput = (input("Do you want numbers in your password? (Y/N): "))             
@@ -26,8 +31,14 @@ def main():
         else:
             useSymbols = False
 
+        userInput = (input("Do you want to allow some repeat characters in your password? (Y/N): "))
+        if userInput.lower() == "y":
+            minimizeRepeats = True
+        else:
+            minimizeRepeats = False
+
         # Generate password
-        password = generatePassword(length, useNumbers, useSymbols)
+        password = generatePassword(length, useNumbers, useSymbols, minimizeRepeats)
         # Print password
         print("your randomly generated password is: ", password)
         
