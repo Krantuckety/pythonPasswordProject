@@ -1,0 +1,2 @@
+Tip: Try making your password longer than 13 characters.
+Tip: Special characters are important, but a long password is the most significant influencer on password strength.
