@@ -77,12 +77,13 @@ def generatePasswordNoRepeats(length: int, chars: string, maxRepeat: int):
 
 # Function to assess the Strength Rating of a password and tell the user about it
 def outputPasswordStrength(entropyRating: float):
-    # Note: Password length is the greatest contributor to strength rating
+    tip = "Tip: Special characters are important, but a long password is the most significant influencer on password strength."  # Hint for weak/medium passwords, will randomly select from tips.txt
+    # match statement to determine strength rating based on entropy value
     match entropyRating:
         case x if (0 <= x < 60): 
-            print("\nPassword Strength: WEAK" + "\nTip: Try making your password longer than 16 characters")
+            print("\nPassword Strength: WEAK" + tip)
         case x if (60 <= x < 80):
-            print("\nPassword Strength: MEDIUM")
+            print("\nPassword Strength: MEDIUM" + tip)
         case x if (80 <= x < 110):
             print("\nPassword Strength: STRONG")
         case x if (110 <= x):
