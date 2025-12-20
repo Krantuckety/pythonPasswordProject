@@ -1,10 +1,20 @@
 # Dependencies
+import math
 import random
 import string
 from collections import Counter
 
 # Function to generate a password
 def generatePassword(length: int, useNumbers: bool, useSymbols: bool, minimizeRepeats: bool):
+    # Calculate constant vars for password generation
+    sizeCharSet = 52  # Initialize to number of letters in the alphabet (uppercase + lowercase)
+    if useNumbers:
+        sizeCharSet += 10  # Add number of digits (0-9)
+    if useSymbols:
+        sizeCharSet += 32  # Add number of common special characters !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+    
+    numPassCombinations = sizeCharSet ** length  # Alt method: math.pow(sizeCharSet, length)
+    
     # Declare variables
     chars = string.ascii_letters
     passwordStrength = 0
